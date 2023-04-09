@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const mongoString = process.env.DATABASE_URL;
-const routes = require("./routes/routes");
+// const routes = require("./routes/routes");
 
 mongoose.connect(mongoString);
 const database = mongoose.connection;
@@ -22,7 +22,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api", routes);
+// app.use("/api", routes);
 
 app.listen(3000, () => console.log("Server Started at Port: 3000..."));
 
