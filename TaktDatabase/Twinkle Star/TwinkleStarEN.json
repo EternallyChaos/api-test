@@ -1,0 +1,67 @@
+{
+  "name": "Twinkle Star",
+  "class": "Restorer",
+  "factions": ["Jollity", "Fantasy"],
+  "rarity": "★",
+  "voiceActor": "Maria Sashide",
+  "baseStats": [
+    {
+      "hp": "240",
+      "speed": "76",
+      "physicalAttack": "10",
+      "physicalDefence": "33",
+      "magicAttack": "82",
+      "magicalDefence": "37",
+      "critRate": "3.2%",
+      "critDamage": "30%",
+      "critResistance": "2.2%",
+      "critDamageResistance": "0%",
+      "stamina": "20"
+    }
+  ],
+  "abilites": [
+    {
+      "attackSkillOne": [
+        {
+          "name": "Starfall Healing",
+          "gain": "(Blue +1)",
+          "description": "Turn energy into stars, dealing damage equal to 90% of Magical Attack to a single enemy, and the next healing skill is guaranteed to CRIT."
+        }
+      ],
+      "attackSkillTwo": [
+        {
+          "name": "Healing Starlight",
+          "gain": "(Green +1)",
+          "description": "Heal an ally for 120% of Magical Attack, increasing the healing amount by 40% to an adjacent ally."
+        }
+      ],
+      "attackSkillThree": [
+        {
+          "name": "Starfall Impact",
+          "gain": "(Green +1)",
+          "description": "Deal damage to a single enemy equal to 50% of Magical Attack, then make a Star Wish, dealing damage at the same position in the next turn equal to 70% of Magical Attack, While also dealing Slash Damage around it equal to the caster's Magical Attack."
+        }
+      ],
+      "passiveOne": [
+        {
+          "name": "Star's Gift",
+          "description": "After being Protected, heal the protector for 30% of own Magical Attack"
+        }
+      ],
+      "passiveTwo": [
+        {
+          "name": "Star Aegis",
+          "description": "When HP is below 50%, all damage received is reduced by 15%"
+        }
+      ],
+      "peakPerformance": [
+        {
+          "name": "Peak Performance",
+          "condition": "Red 0/5,  Blue 2/5,  Green 2/5",
+          "active": "Heal all allies for 100% of own Magical Attack",
+          "passive": "After each attack, heal an ally with the lowest HP for 55% of the damage dealt."
+        }
+      ]
+    }
+  ]
+}
