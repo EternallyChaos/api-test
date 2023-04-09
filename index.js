@@ -44,3 +44,5 @@ app.get("/destiny", (req, res) => {
 });
 
 app.post("/comments", (req, res) => {});
+
+module.exports = app;
