@@ -6,7 +6,8 @@ const mongoose = require("mongoose");
 const mongoString = process.env.DATABASE_URL;
 const routes = require("./routes/routes");
 
-mongoose.connect(mongoString);
+mongoose.connect(mongoString).catch((error) => handleError(error));
+
 const database = mongoose.connection;
 
 database.on("error", (error) => {
