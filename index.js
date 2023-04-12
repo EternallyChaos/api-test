@@ -6,17 +6,20 @@ const mongoose = require("mongoose");
 const mongoString = process.env.DATABASE_URL;
 const routes = require("./routes/routes");
 
-mongoose.connect(mongoString).catch((error) => handleError(error));
+async function run() {
+  await mongoose.connect(mongoString).catch((error) => handleError(error));
+  const database = mongoose.connection;
 
-const database = mongoose.connection;
+  database.on("error", (error) => {
+    console.log(error);
+  });
 
-database.on("error", (error) => {
-  console.log(error);
-});
+  database.once("connected", () => {
+    console.log("Database Connected");
+  });
+}
 
-database.once("connected", () => {
-  console.log("Database Connected");
-});
+run();
 
 const app = express();
 app.use(cors());
