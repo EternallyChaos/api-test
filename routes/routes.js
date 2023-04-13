@@ -7,14 +7,13 @@ module.exports = router;
 
 // Post
 router.get("/", (req, res) => {
-  res.send("routes working");
+  res.send("API routes working");
 });
 
 router.post("/post", async (req, res) => {
-  console.log(req.body.name);
   const data = new Data({
     name: req.body.name,
-    age: req.body.age,
+    cost: req.body.cost,
   });
 
   try {

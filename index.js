@@ -5,6 +5,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const mongoString = process.env.DATABASE_URL;
 const routes = require("./routes/routes");
+const takt = require("./routes/takt");
 
 async function run() {
   try {
@@ -29,24 +30,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", routes);
+app.use("/takt", takt);
 
 app.listen(3000, () => console.log("Server Started at Port: 3000..."));
 
-const data = require("./TaktDatabase/Destiny/destinyEN.json");
-
 app.get("/", (req, res) => {
-  res.send("You are at home a");
-  console.log("Home");
+  res.send("You are at Home");
 });
-
-app.get("/characters", (req, res) => {
-  const characters = ["destiny", "twinkleStars"];
-  res.json({ character: characters });
-});
-
-app.get("/destiny", (req, res) => {
-  res.header("Content-Type", "application/json");
-  res.send(JSON.stringify(data));
-});
-
-app.post("/comments", (req, res) => {});
